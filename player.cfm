@@ -11,12 +11,11 @@
         jsonData = fileRead(fn);
         
         params = {
-            'id': { value: lcase(createUUID()), type: "cf_sql_varchar" },
             'identifier': { value: ident, type: "cf_sql_varchar" },
             'data': { value: serializeJSON(deserializeJSON(jsonData)), type: "longvarchar" }
         };
 
-        queryExecute("INSERT INTO classes (id, identifier, data) VALUES (:id, :identifier, :data)", params);
+        queryExecute("INSERT INTO classes (identifier, data) VALUES (:identifier, :data)", params);
 
         parsed = deserializeJSON(jsonData);
 

@@ -1,5 +1,5 @@
 <cfscript>
-    data = queryExecute("SELECT identifier FROM classes");
+    data = queryExecute("SELECT identifier FROM resources");
 </cfscript>
 
 <cfoutput>
