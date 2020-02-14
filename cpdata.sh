@@ -1,0 +1,1 @@
+cp ../imaginary-hero-designer/Hero\ Designer/Data/db/Player/* Player
