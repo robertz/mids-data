@@ -13,7 +13,7 @@
         params = {
             'id': { value: lcase(createUUID()), type: "cf_sql_varchar" },
             'identifier': { value: ident, type: "cf_sql_varchar" },
-            'data': { value: jsonData, type: "longvarchar" }
+            'data': { value: serializeJSON(deserializeJSON(jsonData)), type: "longvarchar" }
         };
 
         queryExecute("INSERT INTO classes (id, identifier, data) VALUES (:id, :identifier, :data)", params);
